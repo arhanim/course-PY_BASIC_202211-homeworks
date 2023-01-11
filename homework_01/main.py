@@ -50,7 +50,7 @@ def filter_numbers(integers, filter_):
         checker = lambda x: (x % 2) == 0
     elif filter_ == PRIME:
         checker = is_prime
-    # else:
-    #     raise ValueError("Only {ODD | EVEN | PRIME} is allowed for 'filter_' !!")
+    else:
+        raise ValueError("Only {ODD | EVEN | PRIME} is allowed for 'filter_' !!")
 
     return list(filter(checker, integers))
