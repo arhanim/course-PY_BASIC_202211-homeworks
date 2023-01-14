@@ -1,18 +1,23 @@
+#
+# Base Classes definition
+#
+
+
 from abc import ABC
 from homework_02 import exceptions
 
 
 class Vehicle(ABC):
-
-    def __init__(self,
-                 weight: int = 1800,
-                 fuel: float = 63,
-                 fuel_consumption: float = 0.112,
-                ):
+    def __init__(
+        self,
+        weight: int = 1800,
+        fuel: float = 63,
+        fuel_consumption: float = 0.112,
+    ):
 
         self.started = False
-        self.weight = int(weight)    # self.weight = int(weight) ???
-        self.fuel = float(fuel)       # self.fuel = int(fuel)     ???
+        self.weight = int(weight)  # self.weight = int(weight) ???
+        self.fuel = float(fuel)  # self.fuel = int(fuel)     ???
         self.fuel_consumption = float(fuel_consumption)
 
     def start(self):

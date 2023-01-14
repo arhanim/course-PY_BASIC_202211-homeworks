@@ -1,15 +1,20 @@
+#
+# Plane subclass
+#
+
+
 from homework_02 import base
 from homework_02 import exceptions
 
 
 class Plane(base.Vehicle):
-
-    def __init__(self,
-                 weight: int = 30000,
-                 fuel: float = 2000,
-                 fuel_consumption: float = 1.5,
-                 max_cargo: int = 5000,
-                 ):
+    def __init__(
+        self,
+        weight: int = 30000,
+        fuel: float = 2000,
+        fuel_consumption: float = 1.5,
+        max_cargo: int = 5000,
+    ):
 
         super().__init__(weight, fuel, fuel_consumption)
         self.max_cargo = max_cargo
@@ -24,4 +29,5 @@ class Plane(base.Vehicle):
     def remove_all_cargo(self) -> int:
         weight_removed = self.cargo
         self.cargo = 0
-        return(weight_removed)
+
+        return weight_removed
