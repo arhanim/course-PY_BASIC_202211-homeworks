@@ -32,7 +32,7 @@ def is_prime(integer):
     return True
 
 
-def filter_numbers(integers, filter_):
+def filter_numbers(integers_list, filter_):
     """
     функция, которая на вход принимает список из целых чисел,
     и возвращает только чётные/нечётные/простые числа
@@ -53,4 +53,4 @@ def filter_numbers(integers, filter_):
     else:
         raise ValueError("Only {ODD | EVEN | PRIME} is allowed for 'filter_' !!")
 
-    return list(filter(checker, integers))
+    return list(filter(checker, integers_list))
