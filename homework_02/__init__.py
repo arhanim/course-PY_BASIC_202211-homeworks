@@ -1,7 +1,9 @@
-"""
-Домашнее задание №2
-Классы и модули
-"""
+#
+# Homework №2.
+# OOP Base (Classes), Modules.
+#
+
+
 from . import base, car, engine, exceptions, plane
 
 __all__ = [
