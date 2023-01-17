@@ -16,8 +16,8 @@ class Vehicle(ABC):
     ):
 
         self.started = False
-        self.weight = int(weight)  # self.weight = int(weight) ???
-        self.fuel = float(fuel)  # self.fuel = int(fuel)     ???
+        self.weight = int(weight)
+        self.fuel = float(fuel)
         self.fuel_consumption = float(fuel_consumption)
 
     def start(self):

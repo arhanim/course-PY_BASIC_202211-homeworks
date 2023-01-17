@@ -5,14 +5,14 @@
 
 class LowFuelError(Exception):
     def __str__(self):
-        return "##ERROR:  we have no fuel at all!"
+        return "## ERROR: ##   we have no fuel at all!"
 
 
 class NotEnoughFuel(Exception):
     def __str__(self):
-        return "##ERROR:  not enough fuel for (this long) trip."
+        return "## ERROR: ##   not enough fuel for (this long) trip."
 
 
 class CargoOverload(Exception):
     def __str__(self):
-        return "##ERROR:  overload detected - cargo is too heavy."
+        return "## ERROR: ##   overload detected - cargo is too heavy."
