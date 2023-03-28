@@ -1,28 +1,30 @@
 #
 # Homework №1.
-# Functions and Data structures.
+#   Functions and Data structures.
 #
 
 
-def power_numbers(*integers):
-    """
-    функция, которая принимает N целых чисел,
-    и возвращает список квадратов этих чисел:
+def power_numbers(*integers: int) -> list[int]:
+    """Takes N inbound ints and returns a list with the squares of each.
 
     >>> power_numbers(1, 2, 5, 7)
-    <<< [1, 4, 25, 49]
+    [1, 4, 25, 49]
+
     """
 
     return [i**2 for i in integers]
 
 
-# filter_ types:
-ODD = "odd"
-EVEN = "even"
-PRIME = "prime"
+def is_prime(integer: int) -> bool:
+    """Checks if inbound int is a prime number and returns {True|False} accordingly.
 
+    >>> is_prime(16)
+    False
+    >>> is_prime(2)
+    True
 
-def is_prime(integer):
+    """
+
     if abs(integer) < 2:
         return False
 
@@ -32,25 +34,36 @@ def is_prime(integer):
     return True
 
 
-def filter_numbers(integers_list, filter_):
-    """
-    функция, которая на вход принимает список из целых чисел,
-    и возвращает только чётные/нечётные/простые числа
-    (выбор производится передачей дополнительного аргумента):
+# Const for 'filter_type' parameter - see 'filter_numbers(...)' function below
+ODD = "odd"
+EVEN = "even"
+PRIME = "prime"
 
-    >>> filter_numbers([1, 2, 3], ODD)
-    <<< [1, 3]
-    >>> filter_numbers([2, 3, 4, 5], EVEN)
-    <<< [2, 4]
+
+def filter_numbers(integers_list: list[int], filter_type: str) -> list[int]:
+    """Returns the inbound list filtered according to 'filter_type' parameter value.
+
+    'filter_type' values allowed: f{ODD | EVEN | PRIME}.    //"odd", "even" or "prime"//
+
+    >>> filter_numbers([1, 2, 3, 11, 12], ODD)
+    [1, 3, 11]
+    >>> filter_numbers([1, 2, 3, 11, 12], EVEN)
+    [2, 12]
+    >>> filter_numbers([1, 2, 3, 11, 12], PRIME)
+    [2, 3, 11]
+
     """
 
-    if filter_ == ODD:
+    if filter_type == ODD:
         checker = lambda x: (x % 2) == 1
-    elif filter_ == EVEN:
+    elif filter_type == EVEN:
         checker = lambda x: (x % 2) == 0
-    elif filter_ == PRIME:
+    elif filter_type == PRIME:
         checker = is_prime
     else:
-        raise ValueError("Only {ODD | EVEN | PRIME} is allowed for 'filter_' !!")
+        raise ValueError(
+            f"Wrong 'filter_type' value = \"{filter_type}\" "
+            f'(use "{ODD}", "{EVEN}" or "{PRIME}" instead).'
+        )
 
     return list(filter(checker, integers_list))
