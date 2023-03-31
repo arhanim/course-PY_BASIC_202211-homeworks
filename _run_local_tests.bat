@@ -1,11 +1,26 @@
 @echo off
 cls
 
-echo ** pytest testing/test_homework_01 -s -vv
-pytest testing/test_homework_01 -s -vv
-pause
+
+echo ** .\venv_hmw\Scripts\pytest testing/test_homework_01 -s -vv
+echo.
+.\venv_hmw\Scripts\pytest testing/test_homework_01 -s -vv
+
 
 echo.
-echo ** pytest testing/test_homework_02 -s -vv
-pytest testing/test_homework_02 -s -vv
+echo.
+echo ** .\venv_hmw\Scripts\pytest testing/test_homework_02 -s -vv
+echo.
+.\venv_hmw\Scripts\pytest testing/test_homework_02 -s -vv
+
+
+echo.
+echo.
+echo ** .\venv_hmw\Scripts\pytest testing/test_homework_03 -s -vv
+echo.
+.\venv_hmw\Scripts\pytest testing/test_homework_03 -s -vv
+
+
+echo.
+echo.
 pause

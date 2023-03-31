@@ -67,3 +67,7 @@ def filter_numbers(integers_list: list[int], filter_type: str) -> list[int]:
         )
 
     return list(filter(checker, integers_list))
+
+
+if __name__ == "__main__":
+    print("\nI am a 'homework_01/main.py'")
